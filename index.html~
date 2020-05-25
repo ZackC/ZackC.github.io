@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Zack Coker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      <div class="description">
+        <table>
+          <tr>
+            <td>
+              <h3 class="name">
+                Zack Coker
+              </h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="info">
+                Email: zfc-at-andrew-dot-cmu-dot-edu<br/>
+                Position: PhD Student<br/>
+                School: <a href="http://www.cmu.edu/">Carnegie Mellon University</a><br/>
+                Advisor: <a href="http://clairelegoues.com/">Claire Le Goues</a>
+              </p>
+            </td>
+          </tr>
+        </table>    
+      </div>
+      <div class="titleSpace">
+      </div>
+      <div class="selfie">
+        <img class="selfpic" src="ZackCoker.jpg" alt="Picture of Zack Coker">
+      </div>
+    </div>  
+  
+    <hr/>
+
+    <div class="summary">
+      <p>Currently, I am research framework restrictions and self-adaptive system planning.<br/>  
+        In the past, I have worked on projects which involved security, static analysis, and empirical software investigations.
+      </p>
+    </div>
+    <div class="publications" >
+      <h5>Publications</h5>
+      <ul>
+        <li>Zack Coker, Michael Maass, Tianyuan Ding, Claire Le Goues, and Joshua Sunshine. <a href="http://www.cs.cmu.edu/~clegoues/docs/coker15acsac.pdf">Evaluating the Flexibility of the Java Sandbox.</a> Annual Computer Security Applications Conference (ACSAC), 2015.</li>
+        <li>Zack Coker, David Garlan and Claire Le Goues. <a href="http://acme.able.cs.cmu.edu/pubs/uploads/pdf/PID3582925.pdf">SASS: Self-adaptation using stochastic search.</a> International Symposium on Self-adaptation and self-managing systems (SEAMS), 2015.</li>
+        <li>Zack Coker and Munawar Hafiz. <a href="http://www.munawarhafiz.com/research/intproblem/icse13_intproblem.pdf">Program Transformations to Fix C Integers.</a> International Conference of Software Engineering (ICSE 2013), 2013.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

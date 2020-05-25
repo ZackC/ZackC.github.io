@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+    <title>The full GuessingGameLogic class</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=java"></script>
+</head>
+<body>
+<code class="prettyprint">
+package game;<br>
+<br>
+import java.util.Random;<br>
+import java.util.Scanner;<br>
+<br>
+public class GuessingGameLogic {<br>
+<br>
+&nbsp;&nbsp;int numberToGuess;<br>
+&nbsp;&nbsp;int maxValue = 1000;<br>
+&nbsp;&nbsp;Scanner scan;<br>
+<br>
+&nbsp;&nbsp;public GuessingGameLogic(Scanner scan){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.scan = scan;<br>
+&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;public void guessingGame(){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;boolean stillPlaying = true;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Guess the number between 0 and "+maxValue+".");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Random rand = new Random();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;numberToGuess = rand.nextInt(maxValue+1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while(stillPlaying){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int userInput = promptUser();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(numberToGuess &lt userInput){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Too high. Guess again.");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else if(numberToGuess > userInput){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Too low. Guess again");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("You win!!!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stillPlaying = false;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;public int promptUser(){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.print("Enter your guess: ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int input = -1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while(input == -1){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input = scan.nextInt();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}catch (IllegalStateException e){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printErrorMessage();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return input;<br>
+&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;public void printErrorMessage(){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.err.println("Invalid input.  Please enter a valid integer value.");<br>
+&nbsp;&nbsp;}<br>
+<br>
+}<br>
+  
+    </code>
+</body>
+</html>

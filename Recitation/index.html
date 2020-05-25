@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+    <title>CMU 15-313 Recitation 1: Git and GitHub</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=java"></script>
+</head>
+
+<body>
+  <h1>CMU 15-313 Recitation 1: Git and GitHub</h1>
+  <p><b>GOAL:</b> After this recitation, you should be able to comfortably use Git for this course and other projects. You should understand the key concepts of Git and GitHub. Specifically, you should know how to: </p>
+  <ul>
+    <li>write good commit messages</li>
+    <li>how often to commit</li>
+    <li>what to commit</li>
+    <li>how to merge</li>
+  </ul>
+
+  <p><b><u>ACTIVITIES:</u></b></p>
+
+<ol type="1">
+  <li><b><u>Activity 1: Writing Commit Messages (about 5-10 minutes) </u></b></li>
+    <p>When using source control, the goal of a commit message is to summarize the changes you made to the code base.  In general, you want your group members and the instructors to be able to determine what was changed and how it was changed from the commit message.  You also want to keep the commit message short - around a sentence or less. If you can save your group members from having to read through your code to understand every change you make, they will be much more appreciative to work with you. </p>
+  <ol type="a">
+    <li>Look at a couple of commits to see if you can understand the change based on the commit message.</li>
+    <ol type="i">
+      <li> Good commit message: <a href="https://github.com/structurizr/java/commit/ba45c787d55fc9dde01b9832901f9a44026e1198">a bug fix</a></li>
+      <li> Bad commit message: <a href="https://github.com/SquareSquash/java/commit/299ea56ab7d8bca1ef4868608c972bdbe00905cf">a minor change</a></li>
+      <li> Another bad commit: <a href="https://github.com/ZackC/BadCommitRepo/commit/5d4b23f386991d7e37446c3bdb4b33528296f6ef">a commit with all files</a>.  Notice the unneccesary .class files.  This commit is bad because of the unnecessary files in the commit, and will make later merges more complicated.  What exactly to include in a commit will be discussed later.
+    </ol>
+    <li>Look at a few repositories for specific examples.  See if you can understand the general development process from their commit messages.</li>
+    <ol type="i">
+      <li>An example of a pretty good repository made by Facebook developers: <a href="https://github.com/facebook/fresco/commits/master">Facebook's Fresco</a></li>
+      <li>An example of a repository where commit messages provide little information: <a href="https://github.com/dominhquan/Java/commits/master">a general Java project</a></li>
+      <li>An example of another decent repository: <a href="https://github.com/dockerfile/java/commits/master">a program for automating Docker builds</a></li>
+    </ol>
+  </ol>
+  <br>
+  <li><b><u>Activity 2: Correct Commit Size (about 10 minutes) </u></b></li>
+  <ol type="a">
+    <p>For the next activity, the goal is to learn when to commit.  In general, you want to commit whenever you achieve something small but significant, such as implementing a new feature or fixing a bug from a previous version, and when the code successfully compiles.  You want to avoid committing one line changes and only the final project.  Instead, the commit list should read as the steps taken to complete the project. While you will learn the correct commit size over time, it's better to commit too many times than too few times, since many commits make it easy to go back to a previous version if necessary.</p>
+    <p>Another goal is to explain what to commit. As a general rule, the goal is to commit the minimum amount required to easily reproduce your final product.  This amount varies for different projects, so you will have to use your judgement in future cases.  For simple Java projects, committing only the .java files may be good enough.  For a C++ project, you would want to include the source files, header files, and build files.  For more complex projects, you will want to include any library dependencies for your project.  Notice that the compiled version of files were not included.  Compiled files are relatively large, change frequently, and change in a way that limit the effectiveness of source control (do you care about the binary difference between two compiled versions?). In general, anything that changes often and in a way that limits the effectiveness of source control should not be committed. If you run into a situtation where not committing this item makes it difficult to build the project, it might be a good idea to include installation instructions so anyone using your repository can download the latest version of the item.  Another general rule is to avoid the command 'git add .', which will add everything in you project file, including the compiled files - as demonstated in the <a href="https://github.com/ZackC/BadCommitRepo/commit/5d4b23f386991d7e37446c3bdb4b33528296f6ef">a commit with all files</a> example.  Instead, it's better to add file inidvidually or all the files of a specific type (example: for all java files use 'git add *.java'). Another option is to use a .gitingore file.  Add the names of files which you do not want to commit (you can also use wildcards like *.class) to the gitignore file and they will not be included in commits.  </p>
+    <p>We will be building a number guessing game.  Since the goal is to teach you source control, a large portion of the required source code will be provided here and you can copy it into the required files.  In general, the commits in this demonstration will likely be smaller than the ones you do for your project, but they are kept small to illustrate important concepts.</p>
+    <li>Create a Git repository and add the repository to your IDE if the IDE supports it (<a href="createRepoAndAddToEclipse.html">detailed instructions on how to add a Git repository and how to add the repository to Eclipse.</a> You are not required to follow any detailed instructions exactly. They provide help if you are stuck.)</li>
+    <li>Create a menu class in a package named game with the code here: <a href="smallMenu.html">Menu.java</a></li>
+    
+    <li>Run the program to make sure you see the menu printing to the screen</li>
+    <li>Then commit the new file to source control with the command 'git add Menu.java' followed by 'git commit -m "Added the Main Menu"'.  The commit command creates a commit of Menu.java (what you put in the git add command) with the message following the -m parameter.</li>
+    <li>Now that we have finished a feature, let's save it to the repository. If you were working in a group, the next step would be issue a 'git pull' commmand to make sure your group members have not made any changes.  Since we are only working individually, we can skip the 'git pull' command and perform a 'git push' to push the code to the online repository.  In general, you usually want to do a 'git pull' before a 'git push'.  When working as a group, you will also want to push often to make merging easier, which we will discuss later in the recitiation.</li>
+    <li>Now we will add a way to take in user input.  Menu.java should now look like this: <a href="largeMenu.html">Menu.java</a></li>
+    <li> Now let's add a class to handle the game logic titled GuessingGameLogic.java with the code here: <a href="guessingGameLogic.html">GuessingGameLogic.java</a></li>
+    <li> Play the game once or twice to understand what has been changed</li>
+    <li> Now, commit the changes, either in a single commit or multiple commits of the corret size.  Be sure to write a good commit message.  (<a href="commitInstructions.html">detailed instructions</a>) 
+    </ol>
+  </ol>
+  <li><b><u>Activity 3: Branching and Merging (about 20 minutes) </u></b></li>
+    <ol type="a">
+    <p>For the next activity, the goal is to learn how to merge a conflicting file.  To demonstrate this, you will first have to learn about Git branching.  Branches are usually made when you want to make a change without effecting the main repository, for example, adding a large change to the code that may break. Merging occurs when two changes conflict with each other, either from multiple users or different branches.  The amount of difficult merges can be reduced if one person in the project is responsible for editting a specific file at a specific time.  However, this is not always possible, and not always the most effective use of the group members' time. Another option to frequently commit changes, so that merges only require fixing a couple of merge conflicts, instead of multiple files worth of merge conflicts.</p>
+    <li>Create a new branch titled "AuthorInfo", and switch to the branch with the command 'git checkout -b AuthorInfo' ('git checkout -b AuthorInfo' is shorthand for 'git branch AuthorInfo';'git checkout AuthorInfo', which first creates a new branch named AuthorInfo and then switches the current branch to AuthorInfo.</li>
+    <li>Let's say you want to add a new menu item to display the author information.  Update the menu to include an option when 2 is selected, the program will print an author name and short bio (i.e. Joe Code - Best Programmer Ever.)</li> 
+    <li>Commit the changes with a good commit message and push the changes to the repository.  By default, Git assumes that any branch created is a local branch and not available to the general repository.  To push the branch to the repository, you will need to use the command 'git push origin AuthorInfo'. This tells Git that the AuthorInfo should be kept at the origin location, similar to the master branch (the original branch created with git init).</li>
+    <li>Now return back to the master branch with the command 'git checkout master'.  The menu file should return to the state where it does not have the author info option.  If this does not occur, you will need to refresh the Menu.java file in Eclipse.</li>
+    <li>Add a new menu option that provides the user the option to choose the maximum value of the number to guess when 2 is selected in the menu. Then implement this option in the source code.</li>
+    <li>Now let's put the two branches together.  From the master branch (which you should currently be in), run the command 'git merge AuthorInfo' to bring the changes in AuthorInfo into the master branch. This should cause Git to produce an error message about a merge conflict in Menu.java and possibly the other file.
+      <ol type="i">
+      <li>To fix the first merge conflict, open the file Menu.java</li>
+      <li>You should see an error similar to the code below:<br>
+<code class="prettyprint">
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Type 2 to start a new game with a user selected max value.");<br>
+=======<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Type 2 to display author info.");<br>
+>>>>>>> AuthorInfo<br>
+</code>
+      </li>
+      <p> The code between the &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD and the ======= line is the code in the current branch, in this case the master branch.  The code between the ======= and the >>>>>>> AuthorInfo lines is the branch which you are taking changes from, in this case the AuthorInfo branch.  While Git can tell you the difference between the two files, it can't always tell how you want to combine them.  Instead of only changing the result of selecting 2, in this case, you want to create 4 menu options to allow the user to select any of the 4 implemented options. </p>
+      <li>Correctly implement the conflicting menu options outside the &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD line and the >>>>>>> AuthorInfo line. </li>
+      <li>Adjust the quit option selection if necessary </li>
+      <li>Then delete the code between &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD line and the >>>>>>> AuthorInfo line. This completes the process to handle this merge conflict.</li>
+      <li>Correct the rest of the merge conflicts in the repository, using a process similar to way you handled the last merge conflict. </li><br>
+      </ol> 
+    <li>Add the files that were changed to a Git commit, commit the change with a good commit message, and then push the file to the repository. </li> <br>
+      
+  </ol>
+  <li><b><u>For those that finish early:</u></b></li>
+    <p>Go to a cool graphical demo at <a href="http://pcottle.github.io/learnGitBranching/?demo">Git Branching Demo</a> and work through the levels. The site will do a 30 second or so animation and then you can start.</p>
+    <p>*Be careful about using the correct names for the branches in the tutorial.  If the site says to name a branch "bugFix", then it needs to be named "bugFix" to pass the level.</p>
+</ol>
+</body>
+
+</html>

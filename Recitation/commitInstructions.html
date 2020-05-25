@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+    <title>Instructions for adding the commit</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=java"></script>
+</head>
+
+<body>
+
+<p>The instructions below are for committing all of the changes.  However, if you feel you have difficulty describing the changes in about a single sentence or less, you should break up the commit into multiple commits where each one has about a sentence long or less commit message </p>
+      <ol type="i">
+      <li>Run the command 'git add -u' to update all currently tracked files in this commit (since there is only one file, 'git add Menu.java' would also produce the same result, adding Menu.java individually.  This method can be used to only add specific files to the commit)</a></li>
+      <li>Then, then run the command 'git add GuessingGameLogic.java' to add the newly created file</li>
+      <li>Run 'git status' to make sure you are committing both file</li>
+      <li>Run the git commit command and add a reasonable commit message</li>
+      <li>Push your changes to the repository</li>
+      <p>Extra note:  If you only want to add part of a file on a specific commit, you can use the command 'git add --patch someFile' to choose which parts of someFile you want to include in the commit.  You can also add file names to the .gitignore file to exclude adding those file names in all future commits.</p>
+      </ol>
+</body>
+</html>

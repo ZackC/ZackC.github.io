@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Zack Coker</title>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark|Slabo+27px" rel="stylesheet"> 
+  <script src= "./bootstrap/js/jquery-3.2.0.min.js" type="text/javascript"></script>
+  <script src="./bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body data-spy="scroll" data-target="#myNavBar">
+  <div class="container" id="container">
+    <nav class="navbar navbar-default" id="navbar">
+      <div class="topBar">
+          <!--<div class="container-fluid">-->
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavBar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand name navlink" href="index.html">Zack Coker</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="collapse navbar-collapse" id="myNavBar">
+            <nav class="cl-effect-1" id="cl-effect-1">
+              <ul class="nav navbar-nav">
+                <li><a class="scroll hrv-bounce-to-top navlink" href="#container">Home</a></li>
+                <li><a class="scroll hrv-bounce-to-top navlink" href="#info">Research Interests</a></li>
+                <li><a class="scroll hrv-bounce-to-top navlink" href="#pubJump">Publications</a></li>
+                <li><a class="scroll hrv-bounce-to-top navlink" href="#expJump">Employment History</a></li>
+                <li><a class="scroll hrv-bounce-to-bottom navlink" href="#awards">Awards</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="personal row hidden-xs" id="personal">
+      <div class="col-sm-6">
+        <div clas="description">
+          <p class="info info-large" id="info">
+            Email: zfc-at-andrew-dot-cmu-dot-edu<br>
+            Position: Ph.D. Student<br>
+            School: <a href="http://www.cmu.edu/">Carnegie Mellon University</a><br>
+            Advisor: <a href="http://clairelegoues.com/">Claire Le Goues</a><br>
+            <a href="./CV_Zack_September_2019_Full.pdf">Curriculum Vitae</a>
+          </p>
+        </div>
+      </div>
+       <div class="col-sm-6">
+        <div class="selfie text-right">
+          <img src="./images/ProfessionalPic.JPG" alt="Picture of Zack Coker in a suit" class="img-rounded img-responsive selfpic">
+        </div>
+      </div> 
+    </div>
+    <div class="personal row visible-xs-block" id="personal">
+      <div class="col-xs-12">
+          <img src="./images/ProfessionalPic.JPG" alt="Picture of Zack Coker in a suit" class="img-rounded img-responsive selfpic-tiny">
+        </div>
+    </div>
+    <div class="row visible-xs-block" id="personal">
+      <div class="col-xs-12">
+        <div clas="description">
+          <p class="info">
+            Email: zfc-at-andrew-dot-cmu-dot-edu<br>
+            Position: Ph.D. Student<br>
+            School: <a href="http://www.cmu.edu/">Carnegie Mellon University</a><br>
+            Advisor: <a href="http://clairelegoues.com/">Claire Le Goues</a>
+          </p>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <div class="researchInfo">
+    <div class="container">
+      <div class="interests" id="interests">
+        <h2 class="blackTitle">Research Interests</h2>
+        <p id="pubJump">In today's society, inovation, particularly software innovation, is a major driver of the U.S. economy. It is estimated over 50% of software development resources are spent on maintiaining software systems.  My goal is to <strong>reduce the cost of developing and maintaining software</strong>.  I research debugging problems from both the view of a framework user and an integrated development environment (IDE) developer. In the past, I have worked on projects which involved security, static analysis, self-adaptive system planning, and empirical software investigations.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="pubs">
+    <div class="container">
+      <div class="publications" id="publications">
+        <h2>Publications</h2>
+        <div class="publicationList">
+          <ul class="unbulleted">
+            <li><b>Thesis Proposal</b> <a href="./papers/zCokerThesisProposal.pdf">Automated identification and repair of state-based framework directive violations</a></li>
+            <!--<li class="unbulletedPub"><b>Zack Coker</b>, Joshua Sunshine, Claire Le Goues. <a href="./papers/frameworkRepairPaper.pdf">FrameFix: Automatically Repairing Statically-Detected Directive Violations in Frameworks Applications</a> Under submission <button id="frameworkRepairCitation" class="linkbutton">[citation]</button></li>-->
+            <li class="unbulletedPub"><b>Zack Coker</b>, David Gray Widder, Claire Le Goues, Christopher Bogart, and Joshua Sunshine. <a href="./papers/frameworkStudyPaperWithPageNumbers.pdf">A Qualitative Study on Framework Debugging.</a> International Conference on Software Maintenance and Evolution (ICSME), 2019. <button id="frameworkDebuggingCitation" class="linkbutton">[citation]</button></li>
+            <li class="unbulletedPub">Cody Kinneer, <b>Zack Coker</b>, Jiacheng Wang, David Garlan, and Claire Le Goues. <a href="./papers/seams2018.pdf">Managing Uncertainty in Self-Adaptive Systems with Plan Reuse and Stochastic Search.</a> Software Engineering for Adaptive and Self-Managing Systems (SEAMS), 2018. <button id="planReuseCitation" class="linkbutton">[citation]</button></li>
+            <li class="unbulletedPub"><b>Zack Coker</b>, Kostadin Damevski, Claire Le Goues, Nicholas A. Kraft, David Shepherd, and Lori Pollock. <a href="./papers/RobotStudioExceptionPaper.pdf">Behavior Metrics for Prioritizing Investigations of Exceptions.</a> International Conference on Software Maintenance and Evolution (ICSME), 2017. <button id="behaviorCitation" class="linkbutton">[citation]</button></li>
+            <li class="unbulletedPub">Mauricio Soto, <b>Zack Coker</b>, and Claire Le Goues. <a href="./papers/MSRChallenge2017.pdf">Analyzing the Impact of Social Attributes on Commit Integration Success.</a> Mining Software Repositories (MSR), 2017. <button id="integrationCitation" class="linkbutton">[citation]</button></li>
+            <li class="unbulletedPub"><b>Zack Coker</b>, Michael Maass, Tianyuan Ding, Claire Le Goues, and Joshua Sunshine. <a href="http://www.cs.cmu.edu/~clegoues/docs/coker15acsac.pdf">Evaluating the Flexibility of the Java Sandbox.</a> Annual Computer Security Applications Conference (ACSAC), 2015. <button id="sandboxCitation" class="linkbutton">[citation]</button></li>
+            <li class="unbulletedPub" id="expJump"><b>Zack Coker</b>, David Garlan and Claire Le Goues. <a href="http://acme.able.cs.cmu.edu/pubs/uploads/pdf/PID3582925.pdf">SASS: Self-adaptation using stochastic search.</a> Software Engineering for Adaptive and Self-Managing Systems (SEAMS), 2015. <button id="positionCitation" class="linkbutton">[citation]</button></li>
+            <li class="unbulletedPub"><b>Zack Coker</b> and Munawar Hafiz. <a href="http://www.munawarhafiz.com/research/intproblem/icse13_intproblem.pdf">Program Transformations to Fix C Integers.</a> International Conference of Software Engineering (ICSE), 2013. <button id="programCitation" class="linkbutton">[citation]</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="exp">
+    <div class="container">
+      <div class="experience" id="experience">
+        <h2 class="blackTitle">Employment History</h2>
+        <ul class="unbulleted">
+          <li class="unbulletedItem">
+            <div class="col-lg-2">
+              <img class="align-left img-rounded workIcon" src="./images/csdIcon.jpeg">
+            </div>
+            <div class="col-lg-10 experienceDescriptionArea">
+              <h3>Graduate Research Assistant</h3>
+              <h4>Carnegie Mellon University (Aug. 2013 - present)</h4> 
+              <p>Researched software engineering problems with a focus on debugging frameworks and IDEs. In the process, I learned how to create, propose, and conduct novel research projects.  I have also learned how to evaluate other research contributions, look towards the future needs of the software community, and present research findings in a precise manner.</p>
+            </div>
+          </li>
+          <li class="unbulletedItem">
+            <div class="col-lg-2">
+              <img class="align-left img-rounded workIcon" src="./images/abb.jpg">
+            </div>
+            <div class="col-lg-10 experienceDescriptionArea">
+              <h3>Software Engineering Research Intern</h3>
+              <h4>ABB Inc. (May 2016 - Aug. 2016)</h4>
+              <p>Investigated how to assist developers with the exception triage process.  In the process, I applied data sceince techniques to a large corpus, learned how to use statistical techniques to analyze my findings, and built an advanced web survey with Bootstrap and Javascript.  This project also helped me gain a better understanding of the research problems that interest industrial companies. The <a href="http://whispering-meadow-68629.herokuapp.com/">survey can be found here</a> (it takes a while to load the first time).
+              </p>
+            </div>
+          </li>
+          <li class="unbulletedItem">
+            <div class="col-lg-2">
+              <img class="align-left img-rounded workIcon" src="./images/boeing.png">            
+            </div>
+            <div class="col-lg-10 experienceDescriptionArea">
+              <h3>Research Intern</h3> 
+              <h4>Boeing (May 2014 - Aug. 2014)</h4>
+              <p>Investigated the security of multiple open source projects to determine how they used the Java sandbox.  My collaborators and I then created a tool that could reinforce the Java sandbox without preventing applications from doing their necessary techniques.  In the proecess, I learned static analysis, dynamic analysis techniques, and how to work with Java bytecode.
+              </p>
+            </div>
+          </li>
+          <li class="unbulletedItem">
+            <div class="col-lg-2">
+              <img class="align-left img-rounded workIcon" src="./images/au.png">
+            </div>
+            <div class="col-lg-10 experienceDescriptionArea">
+              <h3>Undergraduate Research Assistant</h3> 
+              <h4>Auburn University (Jan. 2012 - Aug. 2013)</h4>
+              <p>Developed a refactoring technique to add security to applications with integer overflow bugs. During the project, I learned Bash scripting, Eclipse plugin development, and how to use bug trackers.</p> 
+            </div>
+          </li>
+          <li class="unbulletedItem">
+            <div class="col-lg-2">
+              <img class="align-left img-rounded workIcon" src="./images/afrl.jpeg">
+            </div>
+            <div class="col-lg-10 experienceDescriptionsArea">
+              <h3>Research Intern</h3>
+              <h4>U.S. Air Force Research Laboratory  (summers of 2008-2011)</h4>
+              <p>Supported projects involving missle navigation.  In the process I learned the basics of computer vision, graphic user interface design, bit processing, file type conversions, and sensor calibrations, along with software and hardware testing.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="awards" id="awards">
+    <div class="container">
+      <h2>Awards</h2>
+      <div class="row singleAward">
+        <div class="col-lg-2">
+          <img class="align-left img-rounded workIcon awardIcon" src="./images/nsf.jpeg">
+        </div>
+        <div class="col-lg-10 experienceDescriptionArea">
+          <h3 class="awardName">Graduate Research Fellow</h3> 
+          <h4>National Science Foundation (2014)</h4>
+        </div>
+      </div>
+      <div class="row singleAward">
+        <div class="col-lg-2">
+          <img class="align-left img-rounded workIcon awardIcon" src="./images/acm.jpeg">
+        </div>
+        <div class="col-lg-10 experienceDescriptionArea">
+          <h3 class="awardName">First Place Undergraduate Student Research Competition</h3> 
+          <h4>Asociation for Computing Machinery (ACM 2013)</h4>
+          </div>
+      </div>
+    </div>
+  </div>
+  <script src="./jquery-3.2.1.min.js" type="text/javascript"></script>
+  <script src="./helperScripts.js" type="text/javascript"></script>
+</body>
+</html>

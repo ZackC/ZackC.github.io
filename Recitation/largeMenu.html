@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+    <title>The full Menu class</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=java"></script>
+</head>
+<body>
+<code class="prettyprint">
+package game;<br>
+<br>
+import java.util.Scanner;<br>
+<br>
+public class Menu {<br>
+<br>
+&nbsp;&nbsp;public static void main(String[] args){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Menu m = new Menu();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;m.displayMenu();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;m.promptUserInput();<br>
+&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;public void displayMenu(){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Welcome to the Nubmer Guessing Game!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Type 1 to start a new game");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Type 2 to quit");<br>
+&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;public void promptUserInput(){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.print("Please enter your selection: ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Scanner scan = new Scanner(System.in);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int choice = 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;try{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;choice = scan.nextInt();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(choice == 1){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GuessingGameLogic gg = new GuessingGameLogic(scan);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gg.guessingGame();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else if(choice == 2){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.exit(0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printErrorMessage();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}catch (IllegalStateException e){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printErrorMessage();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;public void printErrorMessage(){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.err.println("Invalid input.  Please start again.");<br>
+&nbsp;&nbsp;}<br>
+}
+    </code>
+
+</body>
+</html>

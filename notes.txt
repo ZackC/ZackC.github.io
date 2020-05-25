@@ -1,0 +1,4 @@
+access unix file system: zfc@unix.andrew.cmu.edu
+
+you have to grant permission to each folder you upload with the command 
+fs sa 'folder' system:anyuser rl
