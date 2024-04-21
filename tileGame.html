@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>4x4 Grid</title>
+    <style>
+      /* Define the grid dimensions and borders */
+      .grid {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        border: 1px solid black;
+        width: 400px;
+        height: 400px;
+      }
+
+      /* Define the grid cell styles */
+      .cell {
+        border: 1px solid black;
+        background-color: lightgray;
+      }
+      .greenCell{
+	background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid"></div>
+    <button type="button" onclick="resetFunction()">Reset</button>
+    <script>
+      const gridSize = 4;
+      function resetFunction(){
+	for (let i = 0; i < gridSize; i++) {
+          for (let j = 0; j < gridSize; j++) {	
+            const cell = document.getElementById("cell".concat(i.toString(),"-",j.toString()));
+	cell.style.backgroundColor = 'lightgray'
+          cell.setAttribute('myColor','lightgray');
+          }
+        }
+      }
+      function toggleCellColor(cell){
+        if(cell.getAttribute('myColor') === 'lightgray'){
+	cell.style.backgroundColor = 'green';
+          cell.setAttribute('myColor','green');
+	} else {
+	cell.style.backgroundColor = 'lightgray'
+          cell.setAttribute('myColor','lightgray');
+       }
+      }
+
+      function flipCellAndAdjacentCells(cell){
+	toggleCellColor(cell);
+        const row = parseInt(cell.getAttribute('i'));
+        const col = parseInt(cell.getAttribute('j'));
+        //
+        if(row+1<gridSize){
+	  const tempRow = row + 1;
+	  const tempCol = col;
+          const closeCell = document.getElementById("cell".concat(tempRow.toString(),"-",tempCol.toString()));
+          toggleCellColor(closeCell);
+        }
+	 if(row-1>-1){
+	  const tempRow = row - 1;
+	  const tempCol = col;
+          const closeCell = document.getElementById("cell".concat(tempRow.toString(),"-",tempCol.toString()));
+          toggleCellColor(closeCell);
+        }
+	 if(col-1>-1){
+	  const tempRow = row; 
+	  const tempCol = col - 1;
+          const closeCell = document.getElementById("cell".concat(tempRow.toString(),"-",tempCol.toString()));
+          toggleCellColor(closeCell);
+        }
+	if(col+1<gridSize){
+	  const tempRow = row; 
+	  const tempCol = col + 1;
+          const closeCell = document.getElementById("cell".concat(tempRow.toString(),"-",tempCol.toString()));
+          toggleCellColor(closeCell);
+        }
+      }
+	  
+
+      const grid = document.querySelector('.grid');
+
+      // Use a nested for loop to create the grid cells
+      for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+          const cell = document.createElement('div');
+          cell.classList.add('cell');
+	  cell.id='cell'.concat(i.toString(),'-',j.toString());
+	  cell.setAttribute('i',i);
+          cell.setAttribute('j',j);
+          cell.setAttribute('myColor','lightgray');
+	  cell.onmouseup = function() {flipCellAndAdjacentCells(cell)};
+          grid.appendChild(cell);
+        }
+      }
+    </script>
+  </body>
+</html>
